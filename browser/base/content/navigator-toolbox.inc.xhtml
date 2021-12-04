@@ -41,6 +41,68 @@
       <hbox class="titlebar-spacer" type="pre-tabs"/>
 
       <hbox flex="1" align="end" class="toolbar-items">
+        <hbox>
+          
+
+    <toolbaritem id="PanelUI-button"
+    removable="false">
+<toolbarbutton id="ion-button"
+        class="toolbarbutton-1"
+        hidden="true"
+        badged="true"
+        tooltiptext="Ion"
+        onmousedown="switchToTabHavingURI('about:ion', true);"
+        onkeypress="switchToTabHavingURI('about:ion', true);"/>
+<toolbarbutton id="whats-new-menu-button"
+        class="toolbarbutton-1"
+        hidden="true"
+        badged="true"
+        onmousedown="PanelUI.showSubView('PanelUI-whatsNew', this, event);"
+        onkeypress="PanelUI.showSubView('PanelUI-whatsNew', this, event);"/>
+<toolbarbutton id="PanelUI-menu-button"
+        class="toolbarbutton-1"
+        badged="true"
+        consumeanchor="PanelUI-button"
+        data-l10n-id="appmenu-menu-button-closed2"/>
+</toolbaritem>
+      <toolbarbutton id="back-button" class="toolbarbutton-1 chromeclass-toolbar-additional"
+      data-l10n-id="toolbar-button-back-2"
+      removable="false" overflows="false"
+      keepbroadcastattributeswhencustomizing="true"
+      command="Browser:BackOrBackDuplicate"
+      onclick="checkForMiddleClick(this, event);"
+      tooltip="back-button-tooltip"
+      context="backForwardMenu"/>
+<toolbarbutton id="forward-button" class="toolbarbutton-1 chromeclass-toolbar-additional"
+      data-l10n-id="toolbar-button-forward-2"
+      removable="false" overflows="false"
+      keepbroadcastattributeswhencustomizing="true"
+      command="Browser:ForwardOrForwardDuplicate"
+      onclick="checkForMiddleClick(this, event);"
+      tooltip="forward-button-tooltip"
+      context="backForwardMenu"/>
+<toolbaritem id="stop-reload-button" class="chromeclass-toolbar-additional"
+    data-l10n-id="toolbar-button-stop-reload"
+    removable="true" overflows="false">
+<toolbarbutton id="reload-button" class="toolbarbutton-1"
+        data-l10n-id="toolbar-button-reload"
+        command="Browser:ReloadOrDuplicate"
+        onclick="checkForMiddleClick(this, event);"
+        tooltip="dynamic-shortcut-tooltip">
+<box class="toolbarbutton-animatable-box">
+<image class="toolbarbutton-animatable-image"/>
+</box>
+</toolbarbutton>
+<toolbarbutton id="stop-button" class="toolbarbutton-1"
+        data-l10n-id="toolbar-button-stop"
+        command="Browser:Stop"
+        tooltip="dynamic-shortcut-tooltip">
+<box class="toolbarbutton-animatable-box">
+<image class="toolbarbutton-animatable-image"/>
+</box>
+</toolbarbutton>
+</toolbaritem>
+        </hbox>
         <hbox id="TabsToolbar-customization-target" flex="1">
           <tabs id="tabbrowser-tabs"
                 is="tabbrowser-tabs"
@@ -109,43 +171,6 @@
     <toolbartabstop/>
 
     <hbox id="nav-bar-customization-target" flex="1">
-      <toolbarbutton id="back-button" class="toolbarbutton-1 chromeclass-toolbar-additional"
-                     data-l10n-id="toolbar-button-back-2"
-                     removable="false" overflows="false"
-                     keepbroadcastattributeswhencustomizing="true"
-                     command="Browser:BackOrBackDuplicate"
-                     onclick="checkForMiddleClick(this, event);"
-                     tooltip="back-button-tooltip"
-                     context="backForwardMenu"/>
-      <toolbarbutton id="forward-button" class="toolbarbutton-1 chromeclass-toolbar-additional"
-                     data-l10n-id="toolbar-button-forward-2"
-                     removable="false" overflows="false"
-                     keepbroadcastattributeswhencustomizing="true"
-                     command="Browser:ForwardOrForwardDuplicate"
-                     onclick="checkForMiddleClick(this, event);"
-                     tooltip="forward-button-tooltip"
-                     context="backForwardMenu"/>
-      <toolbaritem id="stop-reload-button" class="chromeclass-toolbar-additional"
-                   data-l10n-id="toolbar-button-stop-reload"
-                   removable="true" overflows="false">
-        <toolbarbutton id="reload-button" class="toolbarbutton-1"
-                       data-l10n-id="toolbar-button-reload"
-                       command="Browser:ReloadOrDuplicate"
-                       onclick="checkForMiddleClick(this, event);"
-                       tooltip="dynamic-shortcut-tooltip">
-          <box class="toolbarbutton-animatable-box">
-            <image class="toolbarbutton-animatable-image"/>
-          </box>
-        </toolbarbutton>
-        <toolbarbutton id="stop-button" class="toolbarbutton-1"
-                       data-l10n-id="toolbar-button-stop"
-                       command="Browser:Stop"
-                       tooltip="dynamic-shortcut-tooltip">
-          <box class="toolbarbutton-animatable-box">
-            <image class="toolbarbutton-animatable-image"/>
-          </box>
-        </toolbarbutton>
-      </toolbaritem>
       <toolbarspring cui-areatype="toolbar" class="chromeclass-toolbar-additional"/>
       <toolbaritem id="urlbar-container" flex="400" persist="width"
                    removable="false"
@@ -424,28 +449,6 @@
         <image class="toolbarbutton-animatable-image"/>
       </box>
     </toolbarbutton>
-
-    <toolbaritem id="PanelUI-button"
-                 removable="false">
-      <toolbarbutton id="ion-button"
-                     class="toolbarbutton-1"
-                     hidden="true"
-                     badged="true"
-                     tooltiptext="Ion"
-                     onmousedown="switchToTabHavingURI('about:ion', true);"
-                     onkeypress="switchToTabHavingURI('about:ion', true);"/>
-      <toolbarbutton id="whats-new-menu-button"
-                     class="toolbarbutton-1"
-                     hidden="true"
-                     badged="true"
-                     onmousedown="PanelUI.showSubView('PanelUI-whatsNew', this, event);"
-                     onkeypress="PanelUI.showSubView('PanelUI-whatsNew', this, event);"/>
-      <toolbarbutton id="PanelUI-menu-button"
-                     class="toolbarbutton-1"
-                     badged="true"
-                     consumeanchor="PanelUI-button"
-                     data-l10n-id="appmenu-menu-button-closed2"/>
-    </toolbaritem>
   </toolbar>
 
   <toolbar id="PersonalToolbar"
